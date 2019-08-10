@@ -1,0 +1,60 @@
+whenever sqlerror continue
+shutdown abort
+whenever sqlerror exit failure
+startup nomount
+create database <%= name -%>
+<% if system_password -%>
+   user system identified by <%= system_password -%>
+<% end -%>
+<% if sys_password -%>
+   user sys identified by <%= system_password -%>
+<% end -%>
+<% if control_file -%>
+  controlfile  <%= control_file -%>
+<% end -%>
+<% if maxdatafiles -%>
+  maxdatafiles <%= maxdatafiles -%>
+<% end -%>
+<% if maxinstances -%>
+  maxinstances <%= maxdatafiles -%>
+<% end -%>
+<% if character_set -%>
+  character set <%= character_set -%>
+<% end -%>
+<% if national_character_set -%>
+  national character set <%= national_character_set -%>
+<% end -%>
+<% if tablespace_type -%>
+  set default <%= tablespace_type -%> tablespace
+<% end -%>
+<% if logfile -%>
+  logfile <%= logfile -%>
+<% end -%>
+<% if logfile_groups -%>
+  logfile group <%= logfile_groups.collect {|e| "#{e[0]} #{e[1]}"}.join(', ') -%>
+<% end -%>
+<% if maxlogfiles -%>
+  maxlogfiles <%= maxlogfiles -%>
+<% end -%>
+<% if maxlogmembers -%>
+  maxlogmembers <%= maxlogmembers -%>
+<% end -%>
+<% if maxloghistory -%>
+  maxloghistory <%= maxloghistory -%>
+<% end -%>
+<% if archivelog == :enabled%>
+  archivelog
+<% else -%>
+  noarchivelog
+<% end -%>
+<% if force_logging == :enabled%>
+  force logging 
+<% end -%>
+<% if extent_management == :local -%>
+  extent management local
+<% end -%>
+<%= datafiles %>
+<%= sysaux_datafiles %>
+<%= default_tablespace %>
+<%= undo_tablespace %>
+/

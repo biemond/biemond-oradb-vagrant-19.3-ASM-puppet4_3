@@ -1,0 +1,9 @@
+---
+
+hosts:
+  'dbasm.example.com':
+    ip:                "10.10.10.7"
+    host_aliases:      'dbasm'
+  'localhost':
+    ip:                "127.0.0.1"
+    host_aliases:      'localhost.localdomain,localhost4,localhost4.localdomain4'

@@ -1,0 +1,35 @@
+---
+
+db_version:               '19.0.0.0'
+dbinstance_version:       '19.3'
+
+asm_file:                 'LINUX.X64_193000_grid_home'
+db_file:                  'LINUX.X64_193000_db_home'
+
+
+oraInventory_dir:         '/app'
+
+# global oracle vars
+oracle_base_dir:          '/app/oracle'
+oracle_home_dir:          '/app/oracle/product/19.3/db'
+
+# global OS vars
+oracle_os_user:           "oracle"
+oracle_os_group:          "dba"
+oracle_download_dir:      "/var/tmp/install"
+oracle_source:            "/software"
+
+grid_base_dir:            '/app/grid'
+grid_home_dir:            '/app/grid/product/19.3/grid'
+
+grid_os_user:             "grid"
+grid_os_group:            "asmdba"
+
+oracle_database_name:         'repos'
+oracle_database_domain_name:  'example.com'
+oracle_database_service_name: 'repos.example.com'
+oracle_database_host:         'dbasm.example.com:1521'
+
+oracle_database_sys_password:    'Welcome01'
+oracle_database_system_password: 'Welcome01'
+

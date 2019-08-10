@@ -1,0 +1,11 @@
+HOSTS:
+  centos-58-x64:
+    roles:
+      - master
+    platform: el-5-x86_64
+    box : hajee/centos-5.10-x86_64
+    hypervisor: vagrant
+CONFIG:
+  vagrant_memsize: 3072
+  log_level: verbose
+  type: foss
